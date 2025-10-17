@@ -1,0 +1,173 @@
+.hero-wrapper{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 554px;
+}
+.hero{
+    position: relative;
+    height: 550px;
+    width: 100%;
+    justify-self: center;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    background-color: var(--background-color);
+    /* border-radius: 20px; */
+}
+/* .hero:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 10px rgb(161, 161, 161);
+}
+.hero:hover .slider-recipe div{
+    transform: scale(1.04);
+    text-shadow: 2px 2px 2px rgb(182, 182, 182);
+} */
+.slider{
+    display: flex;
+}
+.slider-recipe{
+    position: relative;
+    flex: 0 0 100%;
+    height: 610px;
+    background-color: var(--background-color);
+    margin-bottom: 0;
+    /* background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0)); */
+}
+.slider-recipe img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: var(--opacity);
+}
+.slider-recipe::after{
+    content: "";
+    position: absolute;
+    background: linear-gradient(5deg,  var(--background-color), var(--background-color), var(--gradient-top), var(--gradient-top), var(--gradient-middle), var(--gradient-bottom));
+    inset: 0;
+    /* opacity: 10%; */
+}
+.desc1, .desc2, .desc3, .desc4, .desc5,
+#title1, #title2, #title3, #title4, #title5{
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 36px;
+    z-index: 1;
+    color: var(--text-color);
+    text-shadow: 0 0 2rem white;
+}
+#title1, #title2, #title3, #title4, #title5{
+    color: var(--primary-color);
+    top: 36%;
+    font-size: large;
+    text-shadow: none;
+}
+.desc1, .desc2, .desc3, .desc4, .desc5{
+    margin-right: 2rem;
+    font-size: small;
+}
+button{
+    position: absolute;     
+    padding: 10px;
+    padding-inline: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(0,0,0,0);
+    color: var(--text-color);
+    border-color: rgba(0,0,0,0);
+    text-shadow: 0 2px 2px 2px rgb(209, 209, 209);
+    margin: 10px;
+    transition: transform 0.2s ease;
+}
+.toRec{
+    position: absolute;     
+    padding: 10px;
+    padding-inline: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(255, 115, 0, 0.521);
+    color: var(--text-color);
+    border-color: rgba(0,0,0,0.2);
+    margin: 10px;
+    transition: transform 0.2s ease;
+    left: 30px;
+    bottom: 30%;
+    z-index: 1;
+    font-weight: 2px;
+}
+button:hover{
+    box-shadow: 0 2px 2px 2px rgb(209, 209, 209);
+}
+.toRec:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 10px rgb(161, 161, 161);
+}
+/* .hero:has(.slider .slider-recipe .toRec:hover){
+    transform: scale(1.02);
+    box-shadow: 0 10px 10px rgb(161, 161, 161);
+} */
+.prev{
+    inset-inline: 0;
+    margin: auto;
+    width: fit-content;
+    top: 28rem;
+    transform: translateX(-50px);
+}
+.next{
+    inset-inline: 0;
+    margin: auto;
+    width: fit-content;
+    top: 28rem;
+    transform: translateX(50px);
+}
+.featured-number{
+    position: absolute;     
+    padding: 10px;
+    padding-inline: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(0,0,0,0);
+    color: var(--text-color);
+    border-color: rgba(0,0,0,0);
+    margin-inline: auto;
+    width: fit-content;
+    top: 28.8rem;
+    inset-inline: 0;
+    font-size: large;
+}
+.featured-number b{
+    font-size: x-large;
+}
+
+@media(min-width: 768px){
+    /* .slider-recipe img{
+        width: 100%;
+        height: 50rem;
+        object-fit: cover;
+        display: block;
+    } */
+    .slider-recipe{
+        height: 600px;
+    }
+    .slider-recipe::after{
+        background: linear-gradient(0deg, var(--background-color), var(--gradient-half), var(--gradient-top), var(--gradient-top), var(--gradient-middle), var(--gradient-bottom));
+    }
+    .featured{
+        margin-top: 2rem;
+    }
+    .desc1, .desc2, .desc3, .desc4, .desc5,
+    #title1, #title2, #title3, #title4, #title5{
+        font-size: 1.4rem;
+        left: 6rem;
+        margin-right: 4rem;
+    }
+    .desc1, .desc2, .desc3, .desc4, .desc5{
+        top: 52%;
+    }
+    .toRec{
+        left: 6rem;
+        scale: 1.2;
+        bottom: 26%;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Details</title>
+  <link rel="stylesheet" href="Project.css">
+  <!-- <link rel="stylesheet" href="Project_RecipeDetail.css"> -->
+  <!-- <style>
+    .detail-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem;
+      text-align: center;
+    }
+    .detail-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .detail-title {
+      font-size: 2rem;
+      margin-bottom: .5rem;
+      color: #00809D;
+    }
+    .detail-category {
+      color: #FF7601;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .detail-desc {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .detail-section {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .detail-section h4 {
+      margin-bottom: .5rem;
+      color: #00809D;
+    }
+  </style> -->
+</head>
+<body>
+  <div class="detail-container" id="detail-container"></div>
+<script src="DarkMode.js"></script>
+<script src="ArrayRecipe.js"></script>
+<script>
+  // Helper function to render all ingredients
+  function renderIngredients(ingredients) {
+    return ingredients.map(item => {
+      if (typeof item === "string") {
+        return `<li>${item}</li>`;
+      } else if (typeof item === "object" && item.title && Array.isArray(item.ingredients)) {
+        return `
+          <li>
+            <strong>${item.title}:</strong>
+            <ul>
+              ${item.ingredients.map(sub => `<li>${sub}</li>`).join('')}
+            </ul>
+          </li>
+        `;
+      }
+      return '';
+    }).join('');
+  }
+
+  // Get recipe ID from URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const recipe = recipes.find(r => r.id == id);
+  const container = document.getElementById('detail-container');
+  if (recipe) {
+    container.innerHTML = `
+      <button class="back-btn" onclick="history.back()"><h4><b>&larr;</b> Back</h4></button>
+      <li id="li-dark"><button id="toggle-dark">Dark Mode</button></li>
+      <div class="img-cont"><img src="${recipe.image || 'images/sample1.jpg'}" alt="${recipe.title}" class="detail-image"></div>
+      <div class="tcd">
+        <h2 class="detail-title">${recipe.title}</h2>
+        <div class="detail-category">${recipe.category || ''}</div>
+        <div class="detail-desc">${recipe.description || ''}</div>
+        <div class="recipe-steps">
+          <div class="detail-section">
+            <h4>Ingredients:</h4>
+            <ul>
+              ${renderIngredients(recipe.ingredients)}
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Steps:</h4>
+            <ol>
+              ${
+          Array.isArray(recipe.steps)
+            ? recipe.steps
+                .map((s) => {
+                  // Case 1: If it's an object with title & instructions
+                  if (typeof s === "object" && s.step && Array.isArray(s.instructions)) {
+                    return `
+                      <div class="step-block">
+                        <h4>${s.step}</h4>
+                        <ol>
+                          ${s.instructions.map((inst) => `<li>${inst}</li>`).join("")}
+                        </ol>
+                      </div>
+                    `;
+                  }
+                  // Case 2: If it's just a string
+                  else if (typeof s === "string") {
+                    return `<li>${s}</li>`;
+                  }
+                  return "";
+                })
+                .join("")
+            : ""
+        }
+            </ol>
+          </div>        
+      </div>      
+      </div>
+    `;
+  } else {
+    container.innerHTML = "<p>Recipe not found.</p>";
+  }
+</script>
+</body>
+</html>

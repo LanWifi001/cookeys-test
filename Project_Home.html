@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookeys — Recipes</title>
+  <link rel="stylesheet" href="Project.css">
+  <link rel="stylesheet" href="Hero.css">
+</head>
+<body>
+  <!-- Universal Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <div class="main-nav" role="navigation" aria-label="Main navigation" id="burger">
+
+        <!-- burger icon -->
+        <input type="checkbox" id="toggle">
+        <label for="toggle" id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav>
+          <ul>
+            <li><a href="Project_Home.html">Home</a></li>
+            <li><a href="Project_Recipes.html">Recipes</a></li>
+            <li><a href="Project_Contact.html">Contact</a></li>
+          </ul>
+          <div id="li-dark" class="dark-cont"><button id="toggle-dark" class="dark-mode"><p>◑</p></button><p>Dark Mode<p></div>          
+        </nav>
+      </div>
+
+      <div class="logo">
+        <a href="Project_Home.html"><img src="Images/Logo.jpg" alt="Cookeys logo"></a>
+        <span class="brand-name">COOKEYS</span>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.3V12h2.3V9.7c0-2.27 1.36-3.53 3.45-3.53.99 0 2.03.18 2.03.18v2.24h-1.15c-1.13 0-1.48.7-1.48 1.42V12h2.52l-.4 2.9h-2.12V21.95A10 10 0 0022 12z"/></svg>
+        </a>
+        <a href="#" aria-label="twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M22 5.92a8.19 8.19 0 01-2.36.65 4.12 4.12 0 00-7.02 2.98c0 .32.03.63.1.93A11.7 11.7 0 013 4.87a4.1 4.1 0 001.27 5.48 4.07 4.07 0 01-1.86-.51v.05c0 1.94 1.38 3.56 3.21 3.93a4.13 4.13 0 01-1.85.07 4.12 4.12 0 003.85 2.86A8.27 8.27 0 012 19.54 11.66 11.66 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68l-.01-.53A8.2 8.2 0 0022 5.92z"/></svg>
+        </a>
+        <a href="#" aria-label="instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <button id="toggle-dark2" class="dark-mode"><p id="moon2">◑</p></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <div class="hero-wrapper">
+      <div class="hero" aria-label="Featured recipe">
+        <div class="slider">
+          <div class="slider-recipe" id="r1">
+            <a href="Project_RecipeDetail.html?id=19">
+              <img src="Images/Halo-Halo.png" alt="Halo-halo.png">
+              <div id="title1"></div>
+              <div class="desc1"></div>
+            </a>
+            <a class="toRec" href="Project_RecipeDetail.html?id=19">Get Recipe</a>
+          </div>
+          <div class="slider-recipe" id="r2">
+            <a href="Project_RecipeDetail.html?id=21">
+              <img src="Images/Carbonara.png" alt="Carbonara.png">
+              <div id="title2"></div>
+              <div class="desc2"></div>
+            </a>
+            <a class="toRec" href="Project_RecipeDetail.html?id=21">Get Recipe</a>
+          </div>
+          <div class="slider-recipe" id="r3">
+            <a href="Project_RecipeDetail.html?id=22">
+              <img src="Images/Lasagna.png" alt="Lasagna.png">
+              <div id="title3"></div>
+              <div class="desc3"></div>
+            </a>
+            <a class="toRec" href="Project_RecipeDetail.html?id=22">Get Recipe</a>
+          </div>
+          <div class="slider-recipe" id="r4">
+            <a href="Project_RecipeDetail.html?id=14">
+              <img src="Images/Waffle.jpg" alt="Waffles.png">
+              <div id="title4"></div>
+              <div class="desc4"></div>
+            </a>
+            <a class="toRec" href="Project_RecipeDetail.html?id=14">Get Recipe</a>
+          </div>
+          <div class="slider-recipe" id="r5">
+            <a href="Project_RecipeDetail.html?id=18">
+              <img src="Images/Letche Flan.png" alt="Leche Flan.png">
+              <div id="title5"></div>
+              <div class="desc5"></div>
+            </a>
+            <a class="toRec" href="Project_RecipeDetail.html?id=18">Get Recipe</a>
+          </div>
+        </div>
+        <br>
+      </div>
+      <button class="prev"><h1>&lt</h1></button>
+      <div class="featured-number"></div>
+      <button class="next"><h1>&gt</h1></button>
+    </div>
+    <div class="catfil-grid">
+      <!-- CATEGORIES -->
+      <section class="categories">
+        <div class="container">
+          <!-- <div class="divider" aria-hidden="true"></div> -->
+          <h2>Categories</h2>
+
+          <div class="categories-grid" aria-label="Recipe categories">
+            <article class="category-card" data-category="Fried">
+              <a href="Project_Recipes.html?category=Fried">
+                <img src="Images/Bangus.png" alt="Fried dish">
+                <h3>FRIED</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="Soup">
+              <a href="Project_Recipes.html?category=Soup">
+                <img src="Images/Sinigang.png" alt="Soup">
+                <h3>SOUP</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="No-cook">
+              <a href="Project_Recipes.html?category=No-cook">
+                <img src="Images/Tuna.png" alt="No-cook">
+                <h3>NO-COOK</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="Pasta">
+              <a href="Project_Recipes.html?category=Pasta">
+                <img src="Images/Carbonara.png" alt="Pasta">
+                <h3>PASTA</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="Breakfast">
+              <a href="Project_Recipes.html?category=Breakfast">
+                <img src="Images/Breakfast.jpg" alt="Breakfast">
+                <h3>BREAKFAST</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="Dessert">
+              <a href="Project_Recipes.html?category=Dessert">
+                <img src="Images/Chocolate Cake.png" alt="Dessert">
+                <h3>DESSERT</h3>
+              </a>
+            </article>
+
+            <article class="category-card" data-category="Vegetables">
+              <a href="Project_Recipes.html?category=Vegetables">
+                <img src="Images/Chopsuey.png" alt="Vegetables">
+                <h3>VEGETABLES</h3>
+              </a>
+            </article>
+
+            <article class="category-card">
+              <a href="Project_Recipes.html?category=Smoothies">
+                <img src="Images/Papaya Banana Smoothie.png" alt="Smoothies">
+                <h3>SMOOTHIES</h3>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILIPINO RECIPES -->
+      <section class="featured" aria-label="Filipino recipes">
+        <div class="container">
+          <div class="section-head">
+            <h2><div class="wrapper">Filipino </div><div class="wrapper">Recipes</div></h2>
+            <a class="get-all" href="Project_Recipes.html?category=Filipino">Get All Recipe &nbsp;&gt;</a>
+          </div>
+          <div class="recipes-grid" id="filipino-recipes-grid"></div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+      <div class="footer-container section-content">
+        <div class="footer-column">
+          <h3>Cookeys</h3>
+          <p>
+            A collection of timeless recipes crafted to inspire home cooks. Savor the joy of cooking and the stories behind every meal.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>About our Website</h3>
+          <p>
+            Cookeys is a simple yet functional Filipino recipe web application built with HTML, CSS, and JavaScript. 
+It allows users to browse dishes, view detailed cooking instructions, and explore different food categories such as Soup, Fried, Breakfast, and Dessert. 
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>La Verdad Christian College<br />Apalit, Pampanga, 2016</p>
+          <p>Phone: <a href="#">+1 (234) 567-890</a></p>
+          <p>
+            Email:
+            <a href="#">cookeys@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cookeys. All rights reserved.</p>
+      </div>
+  </footer>
+
+  <!-- JAVASCRIPT SCRIPT FOR HOMEPAGE -->
+  <script src="ArrayRecipe.js"></script>
+  <script src="DarkMode.js"></script>
+  <script>
+    // Nag shushuffle lang to
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Get Filipino recipes
+    const filipinoGrid = document.getElementById("filipino-recipes-grid");
+    const filipinoRecipes = recipes.filter(r =>
+      r.category && r.category.toLowerCase().includes("filipino")
+    );
+    const randomFilipino = shuffle([...filipinoRecipes]).slice(0, 6);
+
+    filipinoGrid.innerHTML = randomFilipino.map(recipe => `
+      <article class="recipe-card" aria-labelledby="recipe-${recipe.id}" onclick="window.location.href='Project_RecipeDetail.html?id=${recipe.id}'">
+        <div class="meta">
+          <h3 id="recipe-${recipe.id}">${recipe.title}</h3>
+          <div class="tag">${recipe.category}</div>
+        </div>
+        <div class="thumb"><img src="${recipe.image}" alt="${recipe.title}"></div>
+      </article>
+    `).join('');
+
+    // Filtering Recipe per Category
+    const categoryCards = document.querySelectorAll('.category-card[data-category]');
+    categoryCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const cat = card.getAttribute('data-category');
+        const filtered = recipes.filter(r => 
+          r.category && r.category.toLowerCase().includes(cat.toLowerCase())
+        );
+        filipinoGrid.innerHTML = filtered.map(recipe => `
+          <article class="recipe-card" aria-labelledby="recipe-${recipe.id}">
+            <div class="thumb"><img src="${recipe.image || 'https://placehold.co/560x420'}" alt="${recipe.title}"></div>
+            <div class="meta">
+              <h3 id="recipe-${recipe.id}">${recipe.title}</h3>
+              <div class="tag">${recipe.category}</div>
+            </div>
+          </article>
+        `).join('');
+      });
+    });
+  </script>
+</body>
+<script src="Hero.js"></script>
+</html>
